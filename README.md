@@ -4,7 +4,7 @@ Ce projet est un exemple de projet Symfony dockerisé avec les étapes de dével
 
 ## Prérequis
 
-- **Docker :** Assurez-vous d'avoir Docker installé sur votre système. [Télécharger Docker](https://www.docker.com/get-started)
+- **Docker :** Assurez-vous d'avoir Docker installé sur votre système. [Télécharger Docker](https://docs.docker.com/engine/install/)
 - **Docker Compose :** Docker Compose est utilisé pour simplifier le processus de gestion des conteneurs Docker. Assurez-vous de l'avoir installé. [Installer Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Configuration du Projet
