@@ -8,8 +8,11 @@ services:
     ports:
       - "9000:9000"
     volumes:
+<<<<<<< HEAD
       - ./:/var/www/html
       - ./var:/var/www/html/var
+=======
+>>>>>>> e2cd64063e81f4ffba3ec024b5fd65a378cdd22f
     networks:
       - mon-reseau
     user: www-data
@@ -20,7 +23,10 @@ services:
       dockerfile: Dockerfile
       target: composer
     volumes:
+<<<<<<< HEAD
       - ./:/var/www/html
+=======
+>>>>>>> e2cd64063e81f4ffba3ec024b5fd65a378cdd22f
     working_dir: /var/www/html
     command: composer install --no-interaction --optimize-autoloader
     networks:
@@ -51,8 +57,11 @@ services:
     ports:
       - "8080:80"
     volumes:
+<<<<<<< HEAD
       - ./:/var/www/html
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+=======
+>>>>>>> e2cd64063e81f4ffba3ec024b5fd65a378cdd22f
     depends_on:
       - php
       - mysql
