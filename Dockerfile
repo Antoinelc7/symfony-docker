@@ -46,10 +46,7 @@ FROM nginx:1.21 AS preproduction
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copiez le fichier de configuration Nginx personnalisé
-<<<<<<< HEAD
 COPY nginx/nginx.conf /etc/nginx/conf.d/
-=======
->>>>>>> e2cd64063e81f4ffba3ec024b5fd65a378cdd22f
 
 
 
