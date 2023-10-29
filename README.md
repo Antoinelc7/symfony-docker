@@ -30,6 +30,8 @@ Le serveur sera accessible à l'adresse `http://localhost:8080`.
 
 Pour lancer le projet en mode de preprod, utilisez la commande suivante :
 
+Le serveur sera accessible à l'adresse http://localhost:8080.
+
 ```bash
 docker compose -f docker-compose.preprod.yml up --build
 ```
