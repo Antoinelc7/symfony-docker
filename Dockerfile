@@ -21,11 +21,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 WORKDIR /var/www/html
 
 # Copiez le fichier composer.json
-<<<<<<< HEAD
 COPY composer.json /var/www/html/composer.json
-=======
-COPY symfony_docker_project/composer.json /var/www/html/composer.json
->>>>>>> e2cd64063e81f4ffba3ec024b5fd65a378cdd22f
 
 # Installez les dépendances de développement et de preprod
 RUN composer install --no-interaction --optimize-autoloader
