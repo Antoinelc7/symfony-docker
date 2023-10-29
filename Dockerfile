@@ -23,7 +23,7 @@ WORKDIR /var/www/html
 # Copiez le fichier composer.json
 COPY symfony_docker_project/composer.json /var/www/html/composer.json
 
-# Installez les dépendances de développement et de production
+# Installez les dépendances de développement et de preprod
 RUN composer install --no-interaction --optimize-autoloader
 
 # Réglez les permissions si nécessaire
@@ -31,9 +31,6 @@ RUN chown -R www-data:www-data .
 
 # Configurez le fichier ini pour PHP pour le développement
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
-
-# # Exécutez le serveur de développement
-# CMD ["php", "bin/console", "server:start", "0.0.0.0:9000"]
 
 
 

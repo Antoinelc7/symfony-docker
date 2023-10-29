@@ -1,5 +1,5 @@
 version: '3.9'
-services:
+services:   
   php:
     build:
       context: .
@@ -8,7 +8,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./symfony_docker_project:/var/www/html
+      - ./symfony_docker_project:/var/www/html 
       - ./symfony_docker_project/var:/var/www/html/var
     networks:
       - mon-reseau

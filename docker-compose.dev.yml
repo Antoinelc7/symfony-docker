@@ -43,6 +43,22 @@ services:
     networks:
       - mon-reseau
 
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: preproduction
+    ports:
+      - "8080:80"
+    volumes:
+      - ./symfony_docker_project:/var/www/html
+      - ./config/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - mon-reseau
+
 volumes:
   mysql_data:
 
