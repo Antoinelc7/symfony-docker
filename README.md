@@ -13,7 +13,7 @@ Ce projet est un exemple de projet Symfony dockerisé avec les étapes de dével
 
    ```bash
    git clone https://github.com/Antoinelc7/symfony-docker.git
-   cd docker-symfony
+   cd symfony-docker
    ```
 
 2. ## Lancer le Projet en Mode Développement
