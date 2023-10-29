@@ -1,0 +1,66 @@
+version: '3.9'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/var/www/html
+      - ./var:/var/www/html/var
+    networks:
+      - mon-reseau
+    user: www-data
+
+  composer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: composer
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    command: composer install --no-interaction --optimize-autoloader
+    networks:
+      - mon-reseau
+
+  mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfonyuser
+      MYSQL_PASSWORD: symfonypassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - mon-reseau
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: preproduction
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - mon-reseau
+
+volumes:
+  mysql_data:
+
+networks:
+  mon-reseau:
